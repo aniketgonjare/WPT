@@ -1,0 +1,84 @@
+<html>
+    <head >
+        <style>
+            td{
+                padding-top: 20;
+            }
+            fieldset{
+                border-radius: 10px;
+                border-color: blue;
+                border-width: 0.1cm;
+                color: blue;
+            }
+            input{
+                color: white;
+            }
+            td:first-child{
+                text-align: right;
+            }
+            legend{
+                border-radius: 10px;
+                background-color: blue;
+                color: white;
+            }      
+            .a{
+                background-color: black;
+            }    
+            
+        </style>
+    </head>
+    <body style="margin-right: 65%; background-color: black; color: white; ">
+        <form action="validateuser">
+        <fieldset >
+            <legend>Name and Address</legend>
+            <table >
+                <tr>
+                    <td><lebel for=ss>SSN :</lebel></td>
+                    <td><input type="text" name="ssh" id="ss" class="a" autofocus > <span style="background-color: blue; border-radius: 10px;">fill in name and address</span></td>
+                    
+                </tr>
+               
+                <tr>
+                    <td ><lebel for=ss1>Full Name :</lebel></td>
+                    <td><input type="text" name="ssh" id="ss1" class="a"></td>
+                </tr>
+                <tr>
+                    <td >
+                       <lebel for=ss2>Street and number :</lebel></td>
+                    <td>
+                        <input type="text" name="ssh" id="ss2" class="a"></td>
+                </tr>
+                <tr>
+                    <td ><lebel for=ss3>Postal Code :</lebel></td>
+                    <td><input type="text" name="ssh" id="ss3" class="a"></td>
+                </tr>
+                <tr>
+                    <td ><lebel for=ss4>City :</lebel></td>
+                    <td><input type="text" name="ssh" id="ss4" class="a"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <fieldset style="margin-right: 30%;">
+            <legend>
+                Username and Password
+            </legend>
+            <table>
+                <tr>
+                    <td><lebel for=nm>Username</lebel></td>
+                    <td><input type="text" name="unm" id="nm" class="a"></td>
+                </tr>
+                <tr>
+                    <td><lebel for=pass>Password </lebel></td>
+                    <td><input type="text" name="passwd" id="pass" class="a"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" >Show Password
+                </tr>
+            </table>
+        </fieldset> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="Register" style="background-color: blue; color: white; border-radius: 10px;">
+    </form>
+    </body>
+</html>
