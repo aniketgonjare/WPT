@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script>
+            function validateNum(id,errmsg)
+            {
+                var a=document.getElementById(id).value;
+                if(a==""||isNaN(a))
+                {
+                   document.getElementById(errmsg).innerHTML="Please enter valid number"
+                    return false;
+                }
+               document.getElementById(errmsg).innerHTML=""
+                return true;
+            }
+            function validatenumbers()
+            {
+                var flag=validateNum("11","err1");
+                var flag1=validateNum("12","err2");
+                var flag2=validateNum("13","err3");
+
+
+                if(flag==true && flag1==true && flag2==true)
+                {
+                    greaterNumber();
+                }
+               
+            }
+            function greaterNumber()
+            {
+                var n1=parseInt(document.getElementById(11).value)
+                var n2=parseInt(document.getElementById(12).value)
+                var n3=parseInt(document.getElementById(13).value)
+         
+                if(n1>n2 && n1>n3)
+                {
+            //   document.getElementById("mydiv").innerHTML=n1+"num1 is greater"
+               document.getElementById("result").value=n1;
+            }
+                else if(n2>n3)
+                {
+            //    document.getElementById("mydiv").innerHTML=n1+"num1 is greater"
+                document.getElementById("result").value=n2;
+                }
+                else
+                {
+                // document.getElementById("mydiv").innerHTML=n1+"num1 is greater"
+                document.getElementById("result").value=n3;
+                }
+                   
+            }
+        </script>
+    </head >
+    <body style="margin-left: 35%;">
+        Enter Numbers to calculate greatest  <br> <br>
+        num1: <input type="text" name="num11" id="11">*<span id="err1"> </span> <br>
+       <br> num2: <input type="text" name="num11" id="12">*<span id="err2"> </span>  <br>
+       <br> num3: <input type="text" name="num11" id="13">*<span id="err3"> </span> <br><br>
+
+       <button type="submit" name="btn" id="btn" onclick="validatenumbers()" value="submit">Calculate </button><br>
+       <br> Greater Number: <input type="text" name="result" id="result" disabled><br>
+       <!-- <div id="mydiv"></div> -->
+    </body>
+   
+</html>

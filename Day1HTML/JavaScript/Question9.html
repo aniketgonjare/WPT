@@ -1,0 +1,47 @@
+<html>
+    <head>  
+            <style>
+                td{
+                    padding-top: 20px;
+                }
+            </style> 
+            <script>
+                function validateData()
+                {
+                    var v1=validate("prin1","err1");
+                    var v1=validate("roi1","err1");
+                    var v1=validate("per1","err1");
+                }
+            </script>     
+    </head>
+    <body>
+        <hr>
+         <br> <b>**********Calculate Compund Interest**********</b> <br> <br>
+        <hr>
+
+        <table> 
+            <tr>
+                <td>Principle</td>
+                <td><input type="text" name="prin" id="prin1"></td>
+            </tr>
+            <tr>
+                <td>Rate of Interest</td>
+                <td><input type="text" name="roi" id="roi1"></td>
+            </tr>
+            <tr>
+                <td>Period</td>
+                <td><input type="text" name="per" id="per1"></td>
+            </tr>
+            <tr>
+                <td>Compound Interest</td>
+                <td><input type="text" name="Comp" id="comp1" disabled></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="button" name="btn" id="btn1" value="button" onclick="validateData()">Calculate</button></td>
+            </tr>
+        </table>
+
+
+    </body>
+</html>
