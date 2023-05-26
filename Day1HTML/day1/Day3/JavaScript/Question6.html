@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            function validateNumber(ide,err)
+            {
+                var v1=document.getElementById(ide).value;
+                if(v1=="" ||isNaN(v1))
+                {
+                    document.getElementById(err).innerHTML="Enter Valid Number"
+                    return false;
+                }
+                document.getElementById(err).innerHTML=""
+                return true;
+            }
+
+            function validateAll()
+            {
+                var flag=validateNumber("num1", "errmsg");
+                if(flag==true)
+                {
+                    calculateAddition();
+                }
+                
+            }
+            function calculateAddition()
+            {
+                var v2=document.getElementById("num1").value;
+                var result=0;
+
+                for(var i=0;i<v2.length;i++)
+                {
+                    var a1=v2.charAt(i);
+                    result+=parseInt(a1);
+                    a1=0;
+                    
+                }
+                document.getElementById('mydiv').innerHTML="result : "+result;
+            }
+        </script>
+    </head>
+    <body align="center">
+        <fieldset style="margin-right:40%; margin-left: 30%;">
+            <br><br>
+        Enter Number: &emsp;<input type="text" name="num" id="num1" autofocus>* <span id="errmsg"></span><br> <br>  
+        <button type="button" name="btn" id="btn1" value="btn" onclick="validateAll()">find sum</button> <br>
+        <br> <div id="mydiv"></div>
+    </fieldset>
+    </body>
+</html>
