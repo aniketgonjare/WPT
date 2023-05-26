@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <script>
+        p=prompt("enter number comma seprated values");
+        arr=p.split(',');
+
+        var result=arr[0];
+
+        for(var i=0;i<=(arr.length-1);i++)
+        {
+            if(result>arr[i])
+            {
+                
+                result=arr[i];
+            } 
+        }
+        document.write(result);
+        
+       </script>  
+    </head>
+       <span id="mydiv">is Minimum number</span>
+    </body> 
+
+</html>

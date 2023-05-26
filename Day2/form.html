@@ -1,0 +1,23 @@
+<html>
+    <body >
+        <form action="validateUser" method="post">
+            <table align="center">
+                <tr>
+                    <td><label for="nm"> user name</label></td>
+                    <td><input type="text" name="nm" id="nm" required placeholder="enter username"  minlength="3"></td>
+                </tr>
+                <tr>
+                    <td><label for="passwd"> Password</label></td>
+                    <td><input type="text" name="passwd" id="passwd" required placeholder="enter password" pattern="[A-Za-z]+[@#][A-Za-z0-9]+" ></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="Submit" name="btn" id="btn">submit</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="reset" name="canc" id="canc">cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

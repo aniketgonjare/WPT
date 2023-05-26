@@ -1,0 +1,84 @@
+<html>
+    <head>  
+            <style>
+                td{
+                    padding-top: 20px;
+                }
+            </style> 
+            <script>
+                function validateData()
+                {
+                    
+                    var v1=validate("prin1","err1");
+                    var v2=validate("roi1","err2");
+                    var v3=validate("per1","err3");
+                    
+                    if(v1 && v2 && v3)
+                    {
+                        calculateCI();
+                    }
+                }
+
+                function calculateCI()
+                {
+                    var p=parseInt(document.getElementById("prin1").value);
+                    var r=parseInt(document.getElementById("roi1").value);
+                    var n=parseInt(document.getElementById("per1").value);
+
+                    var r1=(1+(r/100));
+                    var result=1;
+                    for(var i=0;i<n;i++)
+                    {
+                         result= result*r1;
+                    }
+                     result=p*result;
+                     var CI=result-p;
+
+                     document.getElementById("comp1").value=CI;
+
+                }
+
+                function validate(ide,err)
+                {
+                    var x1=document.getElementById(ide).value;
+                    if(x1=="" || isNaN(x1))
+                    {
+                        document.getElementById(err).innerHTML="please enter valid number"
+                        return false;
+                    }
+                    document.getElementById(err).innerHTML=" "
+                    return true;
+                }
+            </script>     
+    </head>
+    <body>
+        <hr>
+         <br> <b>**********Calculate Compund Interest**********</b> <br> <br>
+        <hr>
+
+        <table> 
+            <tr>
+                <td>Principle</td>
+                <td><input type="text" name="prin" id="prin1">  <span id="err1"></span></td> 
+            </tr>
+            <tr>
+                <td>Rate of Interest</td>
+                <td><input type="text" name="roi" id="roi1"> <span id="err2"></span></td> 
+            </tr>
+            <tr>
+                <td>Period</td>
+                <td><input type="text" name="per" id="per1"> <span id="err3"></span></td> 
+            </tr>
+            <tr>
+                <td>Compound Interest</td>
+                <td><input type="text" name="Comp" id="comp1" disabled></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="button" name="btn" id="btn1" value="submit" onclick="validateData()">Calculate</button></td>
+            </tr>
+        </table>
+
+
+    </body>
+</html>
