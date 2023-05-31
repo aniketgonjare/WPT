@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            form{
+                margin-left: 35%;
+                margin-right: 35%;
+            }
+            .myclass{
+               background-color: white;
+            }
+            .myc{
+                background-color: yellow;
+            }
+        </style>
+        
+        <script src="./jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                var validateData=(nm,err)=>{
+                    var v1=$("#"+nm).val()
+                    if(v1==""&&v1.trim().length=='0')
+                    {
+                        $("#"+err).html("please enter valid data");
+                        return false;
+                    }
+                    $("#"+err).html("");
+                    return true;
+                    
+                }
+                var validatePattern=(id)=>{
+                    var name=$("#"+id).val();
+                   var pattern=/^an.*$/gi
+                   var i=name.search(pattern);
+
+                    if(i===0)
+                    {          
+                        alert("name starts with an")
+
+                    }
+                    else
+                    {
+                    $("#"+err).html("Name is not starting with an");
+                        return false;
+                    }
+                }
+                $("#nm").focus(function(){
+                    $("#nm").removeClass("myclass").addClass("myc");
+                })
+                $("#nm").blur(function(){
+                    $("#nm").addClass("myclass").removeClass("myc");
+                })
+                $("#eml").focus(function(){
+                    $("#eml").removeClass("myclass").addClass("myc");
+                })
+                $("#eml").blur(function(){
+                    $("#eml").addClass("myclass").removeClass("myc");
+                })
+                $("#sal").focus(function(){
+                    $("#sal").removeClass("myclass").addClass("myc");
+                })
+                $("#sal").blur(function(){
+                    $("#sal").addClass("myclass").removeClass("myc");
+                })
+                $("#btn").click(function(){
+                    var flag1=validateData("nm","errmsg");
+                    var flag2=validateData("eml","errmsg1");
+                    var flag3=validateData("sal","errmsg2");
+
+                    if(flag1&&flag2&&flag3)
+                    {           
+                        var flag1=validatePattern("nm")
+                        if(flag1)
+                        {
+                            
+                        }
+                    }
+                })
+                
+            })
+        </script>
+    </head>
+    <body >
+        <form id="frm" align="center" id="frm" >
+            <fieldset>
+          <span id="sp" style="margin-left: 5%;"> Employee Registration Form </span> <br><br>
+
+            Name : <input type="text" id="nm" name="nm" placeholder="enter name"> <span id="errmsg"></span> <br><br>
+            Email : <input type="text" id="eml" name="eml" placeholder="enter email"> <span id="errmsg1"></span> <br><br>
+            Salary : <input type="text" id="sal" name="sal" placeholder="enter salary"> <span id="errmsg2"></span> <br><br>
+            <button type="button" id="btn" name="btn">Submit</button>
+            <button type="button" id="btn" name="btn">Cancel</button>
+        </fieldset>
+        </form>
+    </body>
+</html>
