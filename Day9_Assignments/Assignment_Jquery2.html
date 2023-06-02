@@ -1,0 +1,54 @@
+<!-- /*  Design a  form to display image and 2 radio buttons (Button1,Buton2) and a button “show”. If 
+user clicks on the show button then text on the button should toggle to hide and show accordingly. 
+And image should appear if button is show and should be hidden if the button is hide. 
+After clicking on button also display alert box to show which radio button is selected.*/ -->
+
+<html>
+    <head>
+        <style>
+            .myclass{
+                display:none;
+            }
+            .myc{
+                display: block;
+            }
+        </style>
+        <script src="./jquery.js"></script>
+        <script>
+            var cnt=0;
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                   
+    
+                    var butt=$("input[name=same]:checked").val();
+                    var text=$('#mydiv').html();
+                    if(text==="Show")
+                    {
+                        $('#mydiv').html("hide");
+                        $("#mydiv1").addClass("myclass").removeClass("myc")
+                        alert(butt)
+                    }
+                    else
+                    {
+                        $('#mydiv').html("Show");
+                        $("#mydiv1").removeClass("myclass").addClass("myc")
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+       
+        
+        <br>
+        <input type="radio" name="same" id="btn1" value="Hide image"> Hide image <br>
+        <input type="radio" name="same" id="btn2" value="Show image">  Show image <br>
+     
+    
+       <button type="button" name="btn" id="btn" value="button"><div id="mydiv">Show</div></button>
+        </div> <br> <br>
+        <div id="mydiv1">
+            <img src="./download.jpeg" width="350px" height="400px" >
+        </div>
+    </body>
+</html>
