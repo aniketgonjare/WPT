@@ -1,0 +1,46 @@
+<!-- //3. Do the following using javascript and jQuery     
+ //Display a form to accept reservation details from user  
+ Name, date , no of seats and a button Book tickets 
+ Once user clicks on the button and if no of seats are 3 then 3 text box  and submit button should 
+ appear below the form. accept names of members and user clicks on submit button display all 
+ information in alert box.  -->
+
+ <html>
+    <head>
+        <script src="./jquery.js"></script>
+        <script>
+             var c=0;
+            $(document).ready(function(){
+                $("#sub1").click(function(){
+                    
+                    var num1=parseInt($("#seats").val());
+                    var cnt=0;
+                    for(i=0;i<num1;i++)
+                    {
+                        cnt++;
+                      var c=  $("#nm").clone();
+                        c.attr({"id":"nm"+cnt ,"name":"nm"});
+                   
+                     $("#mydiv").append("Enter Name of members "+cnt)
+                     $("#mydiv").append(c)
+                     $("#mydiv").append("<br> <br>")
+                    }
+                })
+               $("#mtdiv").html(c);
+            })
+        </script>
+    </head>
+    <body>
+        <form action="validate">
+            <fieldset style="margin-right: 40%; margin-left: 35%;">
+            Enter Name : <input type="text" id="nm" name="nm"> <br> <br>
+            Enter Date : <input type="date" id="dt" name="dt"> <br> <br>
+            Number of seats : <input type="number" id="seats" name="seats" min="0" max="20"> <br><br>
+            <div id="mydiv"></div>
+            <button type="button" id="sub" name="sub">Submit</button> &emsp;
+            <button type="button" id="sub1" name="sub1">Show names</button>
+            <div id="mydiv"></div>
+        </fieldset>
+        </form>
+    </body>
+ </html>
